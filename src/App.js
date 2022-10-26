@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import { AuthCOntextProvider } from './context/AuthContext';
+import { AuthContextProvider } from './context/AuthContext';
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
@@ -10,7 +10,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 function App() {
   return (
     <>
-      <AuthCOntextProvider>
+      <AuthContextProvider>
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
@@ -24,7 +24,7 @@ function App() {
               </ProtectedRoute>} 
           />
         </Routes>
-      </AuthCOntextProvider>
+      </AuthContextProvider>
     </>
   );
 }
